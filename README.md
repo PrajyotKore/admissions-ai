@@ -88,12 +88,35 @@ A production-minded, multi-tenant SaaS platform built for **educational admissio
 
 ## 4. Quick Start & Running Locally
 
-### 4.1 Prerequisites
+### 4.1 One-Command Full Stack Demo Runner (Recommended)
+
+You can launch the entire platform (backend, frontend, database check, and browser) with a single Python command:
+
+```bash
+python run_demo.py
+```
+
+This script will automatically:
+1. Detect your Python virtualenv and `npm`.
+2. Free up ports 8000 and 3000 if any stale processes exist.
+3. Auto-seed the database with the demo consultancy, counsellors, and 12 student leads if not already seeded.
+4. Launch the FastAPI backend on `http://localhost:8000`.
+5. Launch the Next.js frontend on `http://localhost:3000`.
+6. Wait for health checks to pass, then open `http://localhost:3000` directly in your browser.
+7. Gracefully terminate both processes when you press `Ctrl+C`.
+
+**Optional Flags:**
+- `python run_demo.py --no-browser` (start services without auto-opening a browser tab)
+- `python run_demo.py --reseed` (force re-seed fresh demo data on launch)
+
+---
+
+### 4.2 Prerequisites
 - Python 3.11+
 - Node.js 18+ and npm
 - Git
 
-### 4.2 Backend Setup
+### 4.3 Manual Backend Setup
 
 ```bash
 # 1. Navigate to backend directory
